@@ -17,7 +17,7 @@
                 document.getElementById("display").value =""
                 c1=parseInt(c1)
                 op=s
-                if(res==0){
+                if(res==0||rem==1){
                     res=c1;
                     rem=c1;
                 }
@@ -32,7 +32,7 @@
                         rem=rem*c1                   
                     }
                     if(s==4){
-                        res=res+c1
+                        res=res/c1
                     }
                 }    
             }
@@ -71,8 +71,9 @@
 	</head>
 	<body>
 		<div class="wrapper">
+            <h2>Simple Calculator</h2>
           <div class="calc-screen">
-            <input type="text" id="display"/></td> 
+            <input type="text" id="display" disabled/></td> 
           </div>
           <div id ="numbers"> 
             <div> 
@@ -97,7 +98,7 @@
                 <button name="subject" type="submit" onclick="operation(4)" value="/">/</button> 
                 <button name="subject" type="submit" onclick="operation(2)" value="-">-</button>
                 <button name="subject" type="submit" onclick="resu()" value="=">Result</button>  
-                <button name="subject" type="submit" onclick="cle(res)" value="c">clear</button>
+                <button name="subject" type="submit" onclick="cle(res)" value="c">Clear</button>
             </div>
             <div>  
             </div>    
