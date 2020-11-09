@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <title>HTML Test</title>
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript">     
+            var c2=0;
+            var op=0;
+            var res=0;
+            var rem=1;
+			function store(n){   
+                document.getElementById("display").value+=n
+                }
+            function operation(s){
+                var c1=0;
+                c1 = document.getElementById("display").value 
+                document.getElementById("display").value =""
+                c1=parseInt(c1)
+                op=s
+                if(res==0){
+                    res=c1;
+                    rem=c1;
+                }
+                else{
+                    if(s==1){
+                        res=res+c1 
+                    }
+                    if(s==2){
+                        res=res-c1
+                    }
+                    if(s==3){
+                        rem=rem*c1                   
+                    }
+                    if(s==4){
+                        res=res+c1
+                    }
+                }    
+            }
+            function cle(){    
+                c1=0;
+                c2=0;
+                op=0;
+                res=0;
+                rem=1;
+                document.getElementById("display").value =""
+            }    
+            function resu(){
+                c1= document.getElementById("display").value    
+                c1=parseInt(c1)
+                    if(op==1){
+                        res=res+c1
+                        document.getElementById("display").value =res 
+                    }
+                    if(op==2){
+                        res=res-c1 
+                        document.getElementById("display").value =res 
+                    }
+                    if(op==3){
+                        rem=rem*c1;
+                        document.getElementById("display").value =rem
+                    }
+                    if(op==4){
+                        res=res/c1;  
+                        document.getElementById("display").value =res
+                    }
+                rem=1;    
+                res=0; 
+                c1=0;    
+                }   
+		</script>
+	</head>
+	<body>
+		<div class="wrapper">
+          <div class="calc-screen">
+            <input type="text" id="display"/></td> 
+          </div>
+          <div id ="numbers"> 
+            <div> 
+                <button name="subject" type="submit" onclick="store(1)" value="1">1</button>
+                <button name="subject" type="submit" onclick="store(2)" value="2">2</button>
+                <button name="subject" type="submit" onclick="store(3)" value="3">3</button>
+                <button name="subject" type="submit" onclick="operation(3)" value="*">*</button>
+            </div>
+            <div>     
+                <button name="subject" type="submit" onclick="store(4)" value="4">4</button>
+                <button name="subject" type="submit" onclick="store(5)" value="5">5</button>
+                <button name="subject" type="submit" onclick="store(6)" value="6">6</button>
+                <button name="subject" type="submit" onclick="operation(1)" value="+">+</button>    
+            </div>
+            <div>
+                <button name="subject" type="submit" onclick="store(7)" value="7">7</button>
+                <button name="subject" type="submit" onclick="store(8)" value="8">8</button>
+                <button name="subject" type="submit" onclick="store(9)" value="9">9</button>
+                <button name="subject" type="submit" onclick="store(0)" value="0">0</button>  
+            </div> 
+            <div>  
+                <button name="subject" type="submit" onclick="operation(4)" value="/">/</button> 
+                <button name="subject" type="submit" onclick="operation(2)" value="-">-</button>
+                <button name="subject" type="submit" onclick="resu()" value="=">Result</button>  
+                <button name="subject" type="submit" onclick="cle(res)" value="c">clear</button>
+            </div>
+            <div>  
+            </div>    
+        </div>
+        </div>    
+	</body>
+</html>
